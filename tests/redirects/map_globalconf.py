@@ -335,9 +335,10 @@ URLS = flatten((
     url_test('/firefox/fx/', '/firefox/new/'),
 
     # Bug 979531, 1003727, 979664, 979654, 979660, 1150713
-    url_test('/firefox/customize/', '/firefox/desktop/customize/'),
-    url_test('/firefox/{performance,happy,speed,memory}/', '/firefox/desktop/fast/'),
-    url_test('/firefox/security/', '/firefox/desktop/trust/'),
+    # TODO: verify URL below
+    url_test('/firefox/customize/', 'https://support.mozilla.org/kb/customize-firefox-controls-buttons-and-toolbars'),
+    url_test('/firefox/{performance,happy,speed,memory}/', '/firefox/features/fast/'),
+    url_test('/firefox/security/', '/firefox/features/independent/'),
     url_test('/firefox/technology/', 'https://developer.mozilla.org/docs/Tools'),
     url_test('/firefox/sms/{,sent}', '/firefox/'),
 
@@ -1165,4 +1166,9 @@ URLS = flatten((
 
     # Bug 1386112
     url_test('/firefox/android/faq/', 'https://support.mozilla.org/products/mobile'),
+
+    # bug 1392796
+    url_test('/firefox/desktop/trust/', '/firefox/features/independent/'),
+    url_test('/firefox/desktop/tips/', '/firefox/features/'),
+    url_test('/firefox/desktop/customize/', 'https://support.mozilla.org/kb/customize-firefox-controls-buttons-and-toolbars'),
 ))

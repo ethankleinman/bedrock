@@ -145,9 +145,10 @@ redirectpatterns = (
     redirect(r'^firefox/fx/?$', 'firefox.new'),
 
     # Bug 979531, 1003727, 979664, 979654, 979660
-    redirect(r'^firefox/customize/?$', 'firefox.desktop.customize'),
-    redirect(r'^firefox/(?:performance|happy|speed|memory)/?$', 'firefox.desktop.fast'),
-    redirect(r'^firefox/security/?$', 'firefox.desktop.trust'),
+    # TODO: verify URL below
+    redirect(r'^firefox/customize/?$', 'https://support.mozilla.org/kb/customize-firefox-controls-buttons-and-toolbars'),
+    redirect(r'^firefox/(?:performance|happy|speed|memory)/?$', 'firefox.features.fast'),
+    redirect(r'^firefox/security/?$', 'firefox.features.independent'),
     redirect(r'^firefox/technology/?$', 'https://developer.mozilla.org/docs/Tools'),
 
     # Bug 979527
@@ -540,4 +541,11 @@ redirectpatterns = (
 
     # bug 1386112
     redirect(r'^firefox/android/faq/?', 'https://support.mozilla.org/products/mobile'),
+
+    # bug 1392796
+    redirect(r'^firefox/desktop/fast/?', 'firefox.features.fast'),
+    redirect(r'^firefox/desktop/trust/?', 'firefox.features.independent'),
+    redirect(r'^firefox/desktop/tips/?', 'firefox.features.index'),
+    # TODO: verify link below
+    redirect(r'^firefox/desktop/customize/?', 'https://support.mozilla.org/kb/customize-firefox-controls-buttons-and-toolbars'),
 )
