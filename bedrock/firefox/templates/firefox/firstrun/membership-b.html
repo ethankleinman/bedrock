@@ -1,0 +1,67 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "firefox/firstrun/base.html" %}
+
+{% block body_id %}firstrun-membership{% endblock %}
+{% block body_class %}{% endblock %}
+
+{% block page_title %}{{ _('Welcome to Firefox') }}{% endblock %}
+
+{% block site_css %}
+  {% stylesheet 'firefox_firstrun_membership' %}
+{% endblock %}
+
+{% block js %}
+  {% javascript 'firefox_firstrun_membership' %}
+{% endblock %}
+
+{% block global_nav %}{% endblock %}
+{% block site_header %}{% endblock %}
+
+{% block content %}
+<main>
+  <header>
+    <h1>{{ self.page_title() }}</h1>
+    <p>{{ _('You’ve just joined a community committed to user control and online freedom. Make a selection below to stay connected to what you care about most.') }}</p>
+  </header>
+
+  <div class="pick-path">
+    <div class="carousel-container">
+        <div class="carousel">
+          <section class="carousel-item independence">
+            <h2>{{ _('“I’m all about independence”') }}</h2>
+            <p>{{ _('I care that Firefox is the nonprofit alternative to corporate control of the internet. Send me occasional tips and tools about staying independent online and keeping the web free and open.') }}</p>
+          </section>
+          <section class="carousel-item privacy">
+            <h2>{{ _('“I want to stay safe online”') }}</h2>
+            <p>{{ _('I care that Firefox doesn’t sell advertisers access to my personal information. Send me occasional emails about Firefox tools that can help me <strong>keep what’s personal private.</strong>') }}</p>
+          </section>
+          <section class="carousel-item technology">
+            <h2>{{ _('“I’m into the latest technology”') }}</h2>
+            <p>{{ _('I care that FIrefox is fast and lightweight and let’s me get to what I love. Send me occasional updates about the <strong>latest technology</strong> and <strong>innovations</strong> that keep Firefox on the cutting edge.') }}</p>
+          </section>
+          <div class="carousel-pager"></div>
+        </div>
+    </div>
+
+    <section class="path-selector">
+      <h2>{{ _('Pick your path') }}</h2>
+      <p>{{ _('Get tips and news tailored to you.') }}</p>
+      <ul>
+        <li><button type="button" data-index="0">{{ _('Independence') }}</button></li>
+        <li><button type="button" data-index="1">{{ _('Privacy') }}</button></li>
+        <li><button type="button" data-index="2">{{ _('Technology') }}</button></li>
+      </ul>
+      <button class="skip" type="button">{{ _('Skip this') }}</button>
+    </section>
+  </div>
+</main>
+{% endblock %}
+
+{% block site_footer %}{% endblock %}
+{% block email_form %}{% endblock %}
+
+{# Don't display notification for test variation #}
+{% block update_notification %}{% endblock %}

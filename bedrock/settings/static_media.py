@@ -391,6 +391,14 @@ PIPELINE_CSS = {
         ),
         'output_filename': 'css/firefox_firstrun_onboarding-bundle.css',
     },
+    'firefox_firstrun_membership': {
+        'source_filenames': (
+            'css/base/notification-banner.less',
+            'css/firefox/firstrun/membership.less',
+            'css/base/mozilla-fxa-iframe.less',
+        ),
+        'output_filename': 'css/firefox_firstrun_membership-bundle.css',
+    },
     'firefox_firstrun_horizon': {
         'source_filenames': (
             'css/sandstone/sandstone.less',
@@ -1186,6 +1194,13 @@ PIPELINE_JS = {
         ),
         'output_filename': 'js/firefox_dnt-bundle.js',
     },
+    'experiment-firstrun-membership': {
+        'source_filenames': (
+            'js/base/mozilla-traffic-cop.js',
+            'js/firefox/firstrun/experiment-firstrun-membership.js',
+        ),
+        'output_filename': 'js/experiment-firstrun-copy.js',
+    },
     'experiment-firstrun-copy': {
         'source_filenames': (
             'js/base/mozilla-traffic-cop.js',
@@ -1322,6 +1337,15 @@ PIPELINE_JS = {
             'js/firefox/firstrun/onboarding.js',
         ),
         'output_filename': 'js/firefox_firstrun_onboarding-bundle.js',
+    },
+    'firefox_firstrun_membership': {
+        'source_filenames': (
+            'js/libs/jquery.cycle2.min.js',
+            'js/base/mozilla-fxa-iframe.js',
+            'js/base/uitour-lib.js',
+            'js/firefox/firstrun/membership.js',
+        ),
+        'output_filename': 'js/firefox_firstrun_membership-bundle.js',
     },
     'firefox_developer_firstrun': {
         'source_filenames': (
